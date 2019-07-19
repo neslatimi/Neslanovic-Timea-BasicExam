@@ -1,3 +1,24 @@
+@font-face {
+    font-family: gotFont;
+    src: url(/font/Game\ of\ Thrones.ttf);
+}
+
+body {
+    margin: 0px;
+    font-family: gotFont;
+    display: flex;
+}
+.main{
+    display: flex;
+    background-image: url(/assets/site/mapblue.jpg);
+    flex-flow: wrap
+}
+.aside{
+    background-color: #3f4a4d
+}
+.aside_container{
+    
+}
 .notFound--display-none{
     display: none
 }

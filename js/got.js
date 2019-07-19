@@ -26,7 +26,7 @@ const got = {
     let gotTemplate = '';
     this.actors.forEach((element, i) => {
       gotTemplate += `<div class="main_container_dives">
-              <img src="/${this.actors[i].portrait}" alt="${this.actors[i].name}">
+              <img src="/${this.actors[i].portrait}" alt="${this.actors[i].name}" >
               <div class="got_name" onclick="got.showDescription(${i})">${this.actors[i].name}</div>
               </div>`;
       document.querySelector('.main_container').innerHTML = gotTemplate;
