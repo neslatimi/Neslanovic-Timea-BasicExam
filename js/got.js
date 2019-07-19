@@ -37,13 +37,19 @@ const got = {
     const createDisriptionDiv = `<div class="aside_container">
          <div class="aside_container-picture"> <img src="/${this.actors[gotTargetIndex].picture}" 
           alt="${this.actors[gotTargetIndex].name} picture">
-          <div class="aside_container-name">${this.actors[gotTargetIndex].name}
-          <img src="/assets/houses/${this.actors[gotTargetIndex].house}.png"
-                alt="${this.actors[gotTargetIndex].name} house">
-          </div>
+          <div class="aside_container-name">${this.actors[gotTargetIndex].name}${this.isLogoExist(gotTargetIndex)}</div>
           <div class="aside_container-description">${this.actors[gotTargetIndex].bio}</div>
     </div>`;
     document.querySelector('.aside').innerHTML = createDisriptionDiv;
+  },
+  isLogoExist(index) {
+    if (this.actors[index].house === undefined) {
+      return '';
+    }
+    if (this.actors[index].house !== undefined) {
+      return `<img src="/assets/houses/${this.actors[index].house}.png"
+  alt="${this.actors[index].name} house">`;
+    }
   },
 
 };
