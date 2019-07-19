@@ -10,9 +10,11 @@
 <body>
     <main class="main main_container"></main>
     <aside class="aside">
+            <div class="main_container-description"></div>
         <div>
-          <button type="button">keres </button>
-            <input type="text">
+          <button type="button" onclick="got.searchByName()">keres </button>
+            <input type="text" class="input_search" placeholder="&#x1F50ESearch a character">
+           <div class="notFound--display-none">Character not found!</div>
         </div>
     </aside>
     <script type="text/javascript" src="/js/got.js"></script>
