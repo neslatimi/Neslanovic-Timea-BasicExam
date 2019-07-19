@@ -34,10 +34,16 @@ const got = {
   },
   showDescription() {
     const gotTargetIndex = event.target.dataset.nameindex;
-    /*
-    console.log(gotTargetIndex);
-    console.log(this.actors[gotTargetIndex].bio);
-    */
+    const createDisriptionDiv = `<div class="aside_container">
+         <div class="aside_container-picture"> <img src="/${this.actors[gotTargetIndex].picture}" 
+          alt="${this.actors[gotTargetIndex].name} picture">
+          <div class="aside_container-name">${this.actors[gotTargetIndex].name}
+          <img src="/assets/houses/${this.actors[gotTargetIndex].house}.png"
+                alt="${this.actors[gotTargetIndex].name} house">
+          </div>
+          <div class="aside_container-description">${this.actors[gotTargetIndex].bio}</div>
+    </div>`;
+    document.querySelector('.aside').innerHTML = createDisriptionDiv;
   },
 
 };
