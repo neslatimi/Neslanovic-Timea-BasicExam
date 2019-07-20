@@ -1,24 +1,130 @@
+.aside_button{
+    background-color: #3f4a4d;
+    border:3px solid #ffffff;
+    color: #ffffff;
+    height: 6vh;
+    margin-right: 2vw;
+    text-align: center;
+    width: 3vw;
+}
+.aside_container{
+    background-color: #3f4a4d;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 1%;
+    width: 160vw;
+}
+.aside_got_sign{
+    color: #ffffff;
+    text-align: center;
+    font-family: gotFont;
+    font-size:3vw;
+    font-weight: bolder;
+}
+.aside_notFound{
+    color: #ffffff;
+    font-size: 3vh;
+    text-align: right;
+}
+.aside_search{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    padding: 3vh;
+    width:auto;
+}
+.aside_button:hover,
+.aside_got_sign:hover{
+    color: #000000;
+    text-shadow:
+    0px -2px 4px #fff,
+    0px -2px 10px #FF3,
+    0px -10px 20px #F90,
+    0px -20px 40px #B22222;
+}  
+.aside_button:hover,
+.input_search:focus{
+    box-shadow:
+    0px -2px 4px #fff,
+    0px -2px 10px #FF3,
+    0px -10px 20px #F90,
+    0px -20px 40px #B22222;
+    color: #000000;
+}  
+body {
+    display: flex;
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+}
+.character_name{
+    color: #8f3b1b;
+    line-height: auto;
+    text-align: center;
+    font-size:0.7vw;
+    font-weight: bolder;
+}
+.character_name:hover{
+    font-size: 0.9vw;
+}
+.description_container{
+    align-items: stretch;
+    display: flex;
+    flex-flow: column;
+}
+.description_content{
+    font-size:1vw;
+}
+.description_logo{
+    text-align: right;
+}
+.description_name{
+    font-size: 2vw;
+    font-weight: bold;
+}
+.description_picture{
+    height: 25vh;
+    width: 23vw;
+}
+.display--none{
+    display: none;
+}
+.input_search{
+    align-content: flex-end;
+    height: 5vh;
+    justify-content: flex-end;
+    text-align: left;
+    width: 15vw;
+}
 @font-face {
     font-family: gotFont;
     src: url(/font/Game\ of\ Thrones.ttf);
 }
-
-body {
-    margin: 0px;
-    font-family: gotFont;
-    display: flex;
-}
-.main{
-    display: flex;
+.main_container{
+    background-color: #3f4a4d;
     background-image: url(/assets/site/mapblue.jpg);
-    flex-flow: wrap
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    min-height: 100vh;
+    width:auto;
 }
-.aside{
-    background-color: #3f4a4d
+.main_character_container
+{   box-sizing: border-box; 
+    height: auto;
+    text-align: center;
+    width: 10vw;
 }
-.aside_container{
-    
+.music{
+    padding: 2vh;
 }
-.notFound--display-none{
-    display: none
+.portrait{
+    height: auto;
+    width: 5vw;
 }
+.portrait:hover{
+    border-radius: 50%;
+    box-shadow: 0px 0px 25px #000000;
+}
+

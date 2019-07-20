@@ -25,22 +25,28 @@ const got = {
   showAllInMain() {
     let gotTemplate = '';
     this.actors.forEach((element, i) => {
-      gotTemplate += `<div class="main_container_dives">
-              <img src="/${this.actors[i].portrait}" alt="${this.actors[i].name}" >
-              <div class="got_name" onclick="got.showDescription(${i})">${this.actors[i].name}</div>
-              </div>`;
+      gotTemplate += `<div class="main_character_container">
+                          <div class="character_portrait">
+                            <img class="portrait" src="/${this.actors[i].portrait}" 
+                            alt="${this.actors[i].name}"
+                            onclick="got.showDescription(${i})">
+                          </div>
+                          <div class="character_name" 
+                            onclick="got.showDescription(${i})">${this.actors[i].name.toUpperCase()}
+                          </div>
+                      </div>`;
       document.querySelector('.main_container').innerHTML = gotTemplate;
     });
   },
-  showDescription(gotTargetIndex) {
-    // const gotTargetIndex = event.target.dataset.nameindex;
-    const createDisriptionDiv = `<div class="aside_container">
-         <div class="aside_container-picture"> <img src="/${this.actors[gotTargetIndex].picture}" 
-          alt="${this.actors[gotTargetIndex].name} picture">
-          <div class="aside_container-name">${this.actors[gotTargetIndex].name}${this.isLogoExist(gotTargetIndex)}</div>
-          <div class="aside_container-description">${this.actors[gotTargetIndex].bio}</div>
-    </div>`;
-    document.querySelector('.main_container-description').innerHTML = createDisriptionDiv;
+  showDescription(actorsIndex) {
+    const createDisriptionDiv = `<div class="description_container">
+                                    <img class="description_picture"src="/${this.actors[actorsIndex].picture}" 
+                                        alt="${this.actors[actorsIndex].name} picture">
+                                    <div class="description_name">${this.actors[actorsIndex].name}</div>
+                                    <div class="description_logo">${this.isLogoExist(actorsIndex)}</div>
+                                    <div class="description_content">${this.actors[actorsIndex].bio}</div>
+                                </div>`;
+    document.querySelector('.aside_description_container').innerHTML = createDisriptionDiv;
   },
   isLogoExist(index) {
     if (this.actors[index].house === undefined) {
@@ -48,7 +54,7 @@ const got = {
     }
     if (this.actors[index].house !== undefined) {
       return `<img src="/assets/houses/${this.actors[index].house}.png"
-  alt="${this.actors[index].name} house">`;
+                  alt="${this.actors[index].name} house">`;
     }
   },
   searchByName() {
@@ -63,11 +69,11 @@ const got = {
     return this.showNotFound();
   },
   showNotFound() {
-    const notFound = document.querySelector('.notFound--display-none');
-    notFound.classList.remove('notFound--display-none');
+    const notFound = document.querySelector('.display--none');
+    notFound.classList.remove('display--none');
     setTimeout(() => {
-      notFound.classList.add('notFound--display-none');
-    }, 5000);
+      notFound.classList.add('display--none');
+    }, 3000);
   },
 };
 got.init();

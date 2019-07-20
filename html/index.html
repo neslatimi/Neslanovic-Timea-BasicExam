@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Game of Thrones</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <main class="main main_container"></main>
-    <aside class="aside">
-        <p>GAME OF THRONES</p>
-            <div class="main_container-description"></div>
-        <div>
-          <button type="button" onclick="got.searchByName()">keres </button>
-            <input type="text" class="input_search" placeholder="&#x1F50ESearch a character">
-           <div class="notFound--display-none">Character not found</div>
+    <main class="main_container"></main>
+    <aside class="aside_container">
+        <h1 class="aside_got_sign ">GAME OF THRONES</h1>
+            <audio class="music" controls loop>
+               <source src="/music/game-of-thrones-ringtone.mp3" type="audio/mpeg" />
+            </audio>
+        <div class="aside_description_container"></div>
+        <div class="aside_notFound display--none">Character not found</div>
+        <div class="aside_search">
+          <button class="aside_button" type="button" onclick="got.searchByName()">&#10095;</button>
+            <input class="input_search" type="text"  placeholder="   &#128269; Search a character">
         </div>
     </aside>
-    <script type="text/javascript" src="/js/got.js"></script>
+    <script src="/js/got.js"></script>
 </body>
 </html>
