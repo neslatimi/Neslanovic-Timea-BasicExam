@@ -39,6 +39,9 @@ const got = {
     });
   },
   showDescription(actorsIndex) {
+    const eventTarget = event.target;
+    this.selectedCharacter(eventTarget);
+    document.querySelector('.aside_button').classList.remove('shadow');
     const createDisriptionDiv = `<div class="description_container">
                                     <img class="description_picture"src="/${this.actors[actorsIndex].picture}" 
                                         alt="${this.actors[actorsIndex].name} picture">
@@ -47,6 +50,13 @@ const got = {
                                     <div class="description_content">${this.actors[actorsIndex].bio}</div>
                                 </div>`;
     document.querySelector('.aside_description_container').innerHTML = createDisriptionDiv;
+  },
+  selectedCharacter(target) {
+    const allPortrait = document.querySelectorAll('.shadow');
+    allPortrait.forEach((element) => {
+      element.classList.remove('shadow');
+    });
+    target.classList.add('shadow');
   },
   isLogoExist(index) {
     if (this.actors[index].house === undefined) {
