@@ -24,7 +24,7 @@ embed{
     color: #ffffff;
     text-align: center;
     font-family: gotFont;
-    font-size:3vw;
+    font-size:2vw;
     font-weight: bolder;
 }
 .aside_notFound{
@@ -137,7 +137,6 @@ body {
 }
 .shadow{
     border-radius: 50%;
-    /*border: 5px solid #ff621e;*/
     box-shadow: 
      0 -1px 4px #FFF,
      0px -6px 14px #ff0,

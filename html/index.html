@@ -20,7 +20,7 @@
         <div class="aside_notFound display--none">Character not found</div>
         <div class="aside_search">
           <button class="aside_button" type="button" onclick="got.searchByName()">&#10095;</button>
-            <input class="input_search" type="text"  placeholder="   &#128269; Search a character">
+            <input class="input_search" type="text" onkeyup="got.checkKeyPress(event)"  placeholder="   &#128269; Search a character">
         </div>
     </aside>
     <script src="/js/got.js"></script>

@@ -19,7 +19,6 @@ const got = {
           return 1;
         } return -1;
       }));
-
     this.showAllInMain();
   },
   showAllInMain() {
@@ -27,7 +26,7 @@ const got = {
     this.actors.forEach((element, i) => {
       gotTemplate += `<div class="main_character_container">
                           <div class="character_portrait">
-                            <img class="portrait" src="/${this.actors[i].portrait}" 
+                            <img data-id="${i} "class="portrait" src="/${this.actors[i].portrait}" 
                             alt="${this.actors[i].name}"
                             onclick="got.showDescription(${i})">
                           </div>
@@ -39,9 +38,9 @@ const got = {
     });
   },
   showDescription(actorsIndex) {
-    const eventTarget = event.target;
-    this.selectedCharacter(eventTarget);
+    this.selectedCharacter(event.target);
     document.querySelector('.aside_button').classList.remove('shadow');
+    document.querySelector('.input_search').classList.remove('shadow');
     const createDisriptionDiv = `<div class="description_container">
                                     <img class="description_picture"src="/${this.actors[actorsIndex].picture}" 
                                         alt="${this.actors[actorsIndex].name} picture">
@@ -50,6 +49,10 @@ const got = {
                                     <div class="description_content">${this.actors[actorsIndex].bio}</div>
                                 </div>`;
     document.querySelector('.aside_description_container').innerHTML = createDisriptionDiv;
+    /* const dataid = document.querySelectorAll('[data-id]');
+
+    const portrait = dataid.filter(item => item.dataset.id === actorsIndex);
+    portrait.classList.add('shadowed'); */
   },
   selectedCharacter(target) {
     const allPortrait = document.querySelectorAll('.shadow');
@@ -65,6 +68,12 @@ const got = {
     if (this.actors[index].house !== undefined) {
       return `<img src="/assets/houses/${this.actors[index].house}.png"
                   alt="${this.actors[index].name} house">`;
+    }
+  },
+  checkKeyPress(event) {
+    const eventKeycode = event.keyCode;
+    if (eventKeycode === 13) {
+      this.searchByName();
     }
   },
   searchByName() {
